@@ -5,7 +5,7 @@
 
 - Empleo: **¡Buscando una oportunidad!**
 
-- Email de contacto: **Iker15g.t@gmail.com**
+- Mi email de contacto: **Iker15g.t@gmail.com**
 
 - Lo mejor que se me da: **ASP .NET Core y Angular**
 
