@@ -1,6 +1,6 @@
 <div style="width: 100%;">
   <img src="Readme.svg" style="width: 100%;" alt="Click to see the source">
-  <b><h1 align="center">¡Hola! 👋, Soy Iker Gómez Torres</h1></b>
+  <b><h1 align="center">¡Hola! Soy Iker Gómez Torres</h1></b>
 <h3 align="center">Desarrollador Full-Stack</h3>
 
 - Empleo: **¡Buscando una oportunidad!**
