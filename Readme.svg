@@ -54,8 +54,8 @@
 
         @media (prefers-color-scheme: light) {
           .container {
-            --color-main: #F15BB5;
-            --color-primary: #24b0ef;
+            --color-main: #FFFFFF;
+            --color-primary: #000000;
             --color-secondary: #4526f6;
             --color-tertiary: #f6f645;
           }
@@ -73,8 +73,7 @@
       </style>
 
       <div class="container">
-        <h1 align="center">Iker Gómez Torres</h1>
-          <h2>Desarrollador Full-Stack</h2>
+        <h1 align="center">Bienvenido a mi GitHub, aquí encontrarás todo lo que necesitas saber</h1>
       </div>
     </div>
   </foreignObject>
