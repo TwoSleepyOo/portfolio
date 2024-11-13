@@ -56,8 +56,8 @@
           .container {
             --color-main: #FFFFFF;
             --color-primary: #000000;
-            --color-secondary: #4526f6;
-            --color-tertiary: #f6f645;
+            --color-secondary: #000000;
+            --color-tertiary: #FFFFFF;
           }
         }
 
