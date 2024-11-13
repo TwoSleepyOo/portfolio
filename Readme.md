@@ -1,6 +1,6 @@
 <div style="width: 100%;">
   <img src="Readme.svg" style="width: 100%;" alt="Click to see the source">
-  <h1 align="center">¡Hola! 👋, Soy Iker Gómez Torres</h1>
+  <b><h1 align="center">¡Hola! 👋, Soy Iker Gómez Torres</h1></b>
 <h3 align="center">Desarrollador Full-Stack</h3>
 
 - Empleo: **¡Buscando una oportunidad!**
@@ -9,11 +9,11 @@
 
 - Lo mejor que se me da: **ASP .NET Core y Angular**
 
-- Lo que estoy aprendiendo: **React, Next.js y**
+- Lo que estoy aprendiendo: **React y Next.js**
 
 - Teléfono: **(+34) 643 21 12 81**
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">Contáctame:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/https://www.linkedin.com/in/iker-g%c3%b3mez-torres-0b1b71251/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/iker-g%c3%b3mez-torres-0b1b71251/" height="30" width="40" /></a>
 </p>
