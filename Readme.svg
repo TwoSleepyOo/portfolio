@@ -55,8 +55,8 @@
         @media (prefers-color-scheme: light) {
           .container {
             --color-main: #FFFFFF;
-            --color-primary: #000FFF;
-            --color-secondary: #000FFF;
+            --color-primary: #FFF000;
+            --color-secondary: #FFF000;
             --color-tertiary: #FFFFFF;
           }
         }
