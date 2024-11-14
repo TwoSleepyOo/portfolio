@@ -1,0 +1,51 @@
+<div class="cuerpo" id="fullheight">
+    <div class="text-center">
+        <a href="/"><img src="../../../assets/img/PsyQuiLogoLado.png" width="350px" class="p-3"></a>
+    </div>
+    <div class="cl-lg-8 offset-lg-2 cuadroRegistro">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="display-5 titulo">
+                    Registro Rápido
+                </div>
+                <hr class="col-lg-4" />
+                <p class="h4">De tener más tiempo y paciencia te recomendamos el registro personalizado</p>
+            <form [formGroup]="signUp" (ngSubmit)="registrarse()" class="form m-lg-0 mt-lg-2">
+                <div class="form-group mb-3 mt-lg-0 m-lg-4">
+                    <label for="correo" class="form-label h5 mt-lg-4">Correo electrónico</label>
+                    <div class="input-group mt-lg-2">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-user" style="color: #74C0FC;"></i>
+                        </span>
+                        <input type="text" formControlName="email" class="form-control" id="correo" placeholder="Introduce tu correo electrónico">
+                    </div>
+                    <label for="password" class="form-label h5 mt-lg-3">Contraseña</label>
+                    <div class="input-group mt-lg-2">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-lock" style="color: #74C0FC;"></i>
+                        </span>
+                        <input type="password" formControlName="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
+                    </div>
+                    <label for="passwordRep" class="form-label h5 mt-lg-3">Repite tu contraseña</label>
+                    <div class="input-group mt-lg-2">
+                        <span class="input-group-text">
+                            <i class="fa-solid fa-unlock" style="color: #74C0FC;"></i>
+                        </span>
+                        <input type="password" formControlName="passwordRep" class="form-control" id="passwordRep" placeholder="Repite tu contraseña">
+                    </div>
+    
+                </div>
+                <div class="form-group mb-3 mt-lg-0 m-lg-4">
+                    <input type="checkbox" id="TyC" required /> &nbsp;      
+                    <label for="TyC"> Al registrarme acepto las <a href="#" class="text-dark">Condiciones de Servicio</a> y la <a href="#" class="text-dark">Política de Privacidad</a></label>
+                </div>
+                <button class="btn btn-primary redes mt-lg-2" role="link" type="submit"> Registrarse </button>
+            </form>
+        </div>
+            <div class="container col-lg-5 text-center mt-lg-5">
+                <a class="btn boton1 m-lg-3 mt-lg-5" href="/RegistroPerson"><p class="display-5 text-light centrar">Registro personalizado<br /><span class="h5 text-light">Para una mejor atención</span></p></a>
+                <a class="btn boton2 m-lg-3"><p class="display-5 text-light centrar">Contáctanos<br /><span class="h5 text-light">Por si tienes alguna duda</span></p></a>
+            </div>
+        </div>
+    </div>
+</div>

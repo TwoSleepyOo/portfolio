@@ -1,0 +1,101 @@
+.cuerpo{
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #EAECC6, #5271FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right bottom, #EAECC6, #5271FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.titulo{
+    font-weight: bold;
+}
+
+.logo{
+    animation: fadeInUp 3s forwards;
+    opacity: 0;
+}
+
+.cuadroRegistro{
+    opacity: 0;
+    animation: fadeInUp 1.75s forwards, slideUp 1.75s forwards;
+    border-radius: 20px;
+    margin-top: 7.5%;
+    margin-left: 12.5%;
+    background-color: white;
+    width: 75%;
+    height: 725px;
+    box-shadow: -1px 0px 35px -10px rgba(234,236,198,1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.redes{
+    margin-top: 2.5%;
+    margin-left: 32.5%;
+    width: 35%;
+    border-radius: 35px;
+}
+svg{
+    width: 20px;
+    height: 20px;
+}
+
+.rqr{
+    background-image: url(../../../assets/img/FotoIniciolRegistro.jpg);
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    border-end-end-radius: 20px;
+    border-start-end-radius: 20px;
+    border-left: 3px solid #5271FF;
+    height: 725px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.registroContent{
+    margin-top: 25%;
+}
+
+.regTitulo{
+    color: darkslategray;
+    font-style: italic;
+    width: 80%;
+    margin-left: 10%;
+    text-shadow: #EAECC6 1px 0px 10px;
+}
+.regBtt{
+    margin-top: 2.6%;
+    width: 65%;
+    height: 36px;
+    border-radius: 35px;
+}
+
+.linea-vertical{
+    border-left: 3px solid;
+    border-radius: 3px;
+}
+
+.regBtt2{
+    margin-top: 2.5%;
+    width: 65%;
+    border-radius: 35px;
+}
+

@@ -1,0 +1,27 @@
+.cuerpo {
+    background: rgb(238, 241, 248);
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    height: 100vh; /* Altura completa del viewport */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cuerpo1 {
+    background: rgb(238, 241, 248);
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+.mt-10{
+    margin-top: 10%;
+}
+
+.btn-purple{
+    background-color: #CF8BF3;
+    border-color: #CF8BF3;
+}

@@ -1,0 +1,58 @@
+.cuerpo{
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #5271FF, #EAECC6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #5271FF, #EAECC6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.titulo{
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.titulob{
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+.elemento0{
+    animation: fadeIn 1.5s ease 0s 1 normal both;
+}
+
+.elemento1 {
+    animation: fadeIn 1.5s ease 0.5s 1 normal both;
+}
+
+i{
+    cursor: pointer;
+}
+
+.inicioSesibtn{
+    background-color: #EAECC6;
+    border: none;
+    height: 40px;  
+    animation: fadeIn 1.5s ease 1s 1 normal both;
+}
+
+.continuarbtn{
+    border: none;
+    height: 40px; 
+    animation: fadeIn 1.5s ease 1.5s 1 normal both;
+}
+
+.registroRapidobtn{
+    background-color: #2BC0E4;
+    border: none;
+    height: 40px; 
+    animation: fadeIn 1.5s ease 2s 1 normal both;
+}
+
+.input-group-icon {
+    width: 40px; /* Ajusta el ancho según tus necesidades */
+}

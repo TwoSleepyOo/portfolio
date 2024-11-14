@@ -1,0 +1,38 @@
+<app-header-doctor class="fixed-top"></app-header-doctor>
+<div *ngIf="!isAuthenticated">
+    <div class="cuerpo1 d-flex justify-content-center align-items-center vh-100">
+        <app-not-found></app-not-found>
+    </div>
+</div>
+<div *ngIf="isAuthenticated">
+    <div class="cuerpo">
+        <div class="mt-6">
+            <div class="px-3" *ngFor="let patient of patients; let i = index">
+                <div class="card col-12 mb-3 p-2" style="border: outset 7px #CF8BF3;">
+                    <h1 class="card-title">{{patient.nombre}} {{patient.apellidos}}</h1>
+                    <h4 class="card-subtitle text-capitalize">{{patient.genero}}</h4>
+                    <hr>
+                    <p class="card-text">{{patient.detalles}}</p>
+                    <div *ngFor="let relation of relations; let j = index">
+                        <div *ngIf="patient.idPatient === relation.idPatient">
+                            <form class="p-3">
+                                <h5>Notas:</h5>
+                                <textarea 
+                                    [readOnly]="isReadOnly[j]" 
+                                    class="col-12 p-2" 
+                                    [(ngModel)]="relation.notas" 
+                                    name="notas{{j}}">
+                                </textarea>
+                                <button class="btn btn-primary btn-purple" type="button" (click)="toggleEdit(j)">
+                                    {{ isReadOnly[j] ? 'Editar' : 'Guardar' }}
+                                </button>
+                                <button class="btn btn-danger mx-3" *ngIf="!isReadOnly[j]" type="button" (click)="cancelEdit(j)">Cancelar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer-doctor class="fixed-bottom"></app-footer-doctor>

@@ -1,0 +1,44 @@
+footer {
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #EAECC6, #5271FF); 
+    background: linear-gradient(to left top, #EAECC6, #5271FF);
+    height: 20%;
+    border: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+h6,img,p{
+    margin: 0;
+}
+
+i{
+    border: #5271FF solid 5px;
+    border-radius: 50%;
+    padding: 15px;
+    padding-top: 22.5px;
+    padding-bottom: 22.5px;
+    background-color: #2BC0E4;
+}
+
+.option {
+    padding: 10px 20px;
+    border: none;
+    font-size: 25px;
+    margin-left: 18%;
+    margin-top: 2.5%;
+}
+  
+.option:hover {
+    background-color: #ffffff70;
+    box-shadow: 5px 0px 5px #ffffff70, -5px 0px 5px #ffffff70;
+}
+  
+.navbar-toggler {
+    margin-top: 10px;
+}
+  
+  

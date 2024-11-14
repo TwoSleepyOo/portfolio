@@ -1,0 +1,59 @@
+<app-header-doctor class="fixed-top"></app-header-doctor>
+<div *ngIf="!isAuthenticated">
+    <div class="cuerpo1 d-flex justify-content-center align-items-center vh-100">
+        <app-not-found></app-not-found>
+    </div>
+</div>
+<div *ngIf="isAuthenticated">
+    <div class="cuerpo">
+        <div class="row mt-10">
+            <div class="col-6 p-3 text-center">
+                <h1 class="display-4">Citas</h1>
+                <h3>Tus próximas citas</h3>
+                <div class="align-middle mt-5 p-3" *ngIf="citas.length === 0">
+                      <img width="30%" src="../../../assets/img/Calendario.png">
+                      <h3 class="display-6">Parece que no tienes citas, cuando un paciente solicite una cita, te aparecerá aquí</h3>
+                </div>
+                <table class="mt-5 p-3 col-12" *ngIf="citas.length !== 0">
+                    <h3 class="mb-3">Nuevas solicitudes de cita</h3>
+                    <tr *ngFor="let cita of citasPen">
+                        <td class="row mb-3">
+                            <span class="col-6">{{formatSpanishDate(cita.fecha)}} a las {{cita.hora}} </span>
+                            <span class="col-2"></span>
+                            <span *ngIf="cita.estado === 'Pendiente'" class="col-4"><button (click)="aceptarCita(cita.id)" class="btn btn-success mx-2">Aceptar</button><button (click)="rechazarCita(cita.id)" class="btn btn-danger">Rechazar</button></span>
+                        </td>
+                    </tr>
+                    <h3 class="mb-3">Citas confirmadas</h3>
+                    <tr *ngFor="let cita of citasCon">
+                        <td class="row mb-3">
+                            <span class="col-6">{{formatSpanishDate(cita.fecha)}} a las {{cita.hora}} </span>
+                            <span class="col-2"></span>
+                            <button *ngIf="cita.estado === 'Aceptada'" (click)="cancelarCita(cita.id)" class="btn btn-danger col-2">Cancelar</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-6 p-3 text-center">
+                <h1 class="display-4">Días de no disponibilidad</h1>
+                <h3>Marca aquí los días que no estés disponible</h3>
+                <form [formGroup]="formND" (ngSubmit)="createNoDisponible()" class="p-3">
+                    <div class="input-group mb-5">
+                        <span class="input-group-text input-group-icon">
+                            <i class="fa-solid fa-calendar" style="color: #CF8BF3"></i>
+                        </span>
+                        <input type="date" formControlName="fecha" class="form-control" id="fecha-nacimiento" required>
+                    </div>
+                    <button type="submit" role="link" class="btn btn-primary btn-purple mt-5">Establecer no disponibilidad</button>
+                </form>
+                <hr>
+                <h3>Aquí los días que ya hayas marcado como no disponibles</h3>
+                <table class="text-center table mt-4">
+                    <tr *ngFor="let fena of fechasOrdenadas">
+                        <td>{{fena}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer-doctor class="fixed-bottom"></app-footer-doctor>

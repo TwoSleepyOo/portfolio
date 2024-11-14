@@ -1,0 +1,89 @@
+@keyframes fadeInDown {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(10%);
+    }
+  }
+
+.cuerpo{
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #5271FF, #EAECC6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #5271FF, #EAECC6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.titulo{
+  font-weight: bold;
+}
+
+
+.cuadroRegistro{
+    opacity: 1;
+    animation: fadeInDown 1s forwards, slideDown 1s forwards;
+    border-radius: 20px;
+    margin-left: 12.5%;
+    padding: 20px;
+    background-color: white;
+    height: 70%;
+    width: 75%;
+    box-shadow: -1px 0px 35px -10px rgba(234,236,198,1);
+}
+
+.redes{
+  margin-left: 35%;
+  width: 30%;
+  border-radius: 25px;
+}
+
+.boton1{
+  height: 200px;
+  width: 90%;
+  border-radius: 20px;
+  background-image: url(../../../assets/img/registroRapidobt1.png);
+  background-color: rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px -100px;
+  border: solid #EAECC6 0.5px;
+  box-shadow: 0px 0px 25px #5271FF;
+  transition: transform 0.3s ease;
+}
+
+.boton1:hover{
+  transform: scale(1.1,1.1);
+}
+
+.boton2{
+  height: 200px;
+  width: 90%;
+  border-radius: 20px;
+  background-image: url(../../../assets/img/TelefonoEsperanza.png);
+  background-color: rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px -90px;
+  border: solid #EAECC6 0.5px;
+  box-shadow: 0px 0px 25px #5271FF;
+  transition: transform 0.3s ease;
+}
+
+.boton2:hover{
+  transform: scale(1.1,1.1);
+}
+
+.centrar{
+  margin-top: 8%;
+}

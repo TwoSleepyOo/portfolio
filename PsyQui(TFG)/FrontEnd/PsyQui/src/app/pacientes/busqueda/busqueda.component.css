@@ -1,0 +1,70 @@
+.cuerpo {
+    background: rgb(238, 241, 248);
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    height: 100%; /* Altura completa del viewport */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mt-10{
+    margin-top: 10%;
+}
+
+.mb-10{
+    margin-bottom: 10%;
+}
+
+.details-section {
+    transition: max-height 0.5s ease-out;
+    max-height: 0;
+}
+  
+.details-section.slide-down {
+    max-height: 140px;
+}
+  
+.details-section.slide-up {
+    max-height: 0;
+}
+  
+.toggle-button {
+    margin-top: 140px;
+    margin-left: 45%;
+}
+  
+.mt-25 {
+    margin-top: 25%;
+}
+  
+.mt-15 {
+    margin-top: 15%;
+}
+
+.mt-7y15{
+    margin-top: 7.15%;
+}
+
+.mt-7y5{
+    margin-top: 7.5%;
+}
+
+.mt-17 {
+    margin-top: 17%;
+}
+  
+.slide-up + .row .toggle-button {
+    top: 5.5%;
+}
+
+.btn-dark{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    background-color: #2BC0E4;
+}
+  
+  

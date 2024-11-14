@@ -1,0 +1,66 @@
+<app-header-paciente class="fixed-top"></app-header-paciente>
+<div *ngIf="!isAuthenticated">
+    <div class="cuerpo d-flex justify-content-center align-items-center vh-100">
+        <app-not-found></app-not-found>
+    </div>
+</div>
+<div *ngIf="isAuthenticated">
+    <div class="cuerpo">
+        <div class="row mt-10 mb-10">
+            <div class="col-6 p-3 text-center">
+                <h1 class="display-4">Citas</h1>
+                <h3>Tus próximas citas</h3>
+                <div *ngIf="citas.length === 0" class="align-middle mt-5 p-3">
+                      <img width="20%" src="../../../assets/img/Calendario.png">
+                      <h4 class="display-6">Parece que no tienes citas</h4>
+                </div>
+                <table *ngIf="citas.length !== 0" class="mt-5 p-3 col-12">
+                    <tr *ngFor="let cita of citas">
+                        <td class="row mb-3">
+                            <span class="col-6">{{formatSpanishDate(cita.fecha)}} a las {{cita.hora}} 
+                                <span *ngIf="cita.estado === 'Rechazada'" class="text-danger"> (RECHAZADA) </span>
+                                <span *ngIf="cita.estado === 'Pendiente'" class="text-secondary"> (PENDIENTE) </span>
+                                <span *ngIf="cita.estado === 'Aceptada'" class="text-success"> (ACEPTADA) </span>
+                                <span *ngIf="cita.estado === 'Cancelada'" class="text-danger"> (CANCELADA) </span>
+                            </span>
+                            <span class="col-2"></span>
+                            <span *ngIf="cita.estado === 'Rechazada'" (click)="borrarCita(cita.id)" class="btn btn-warning col-2">Borrar</span>
+                            <span *ngIf="cita.estado === 'Cancelada'" (click)="borrarCita(cita.id)" class="btn btn-warning col-2">Borrar</span>
+                            <button *ngIf="cita.estado === 'Aceptada'" (click)="borrarCita(cita.id)" class="btn btn-danger col-2">Cancelar</button>
+                            <button *ngIf="cita.estado === 'Pendiente'" (click)="borrarCita(cita.id)" class="btn btn-danger col-2">Cancelar</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-6 p-3 text-center">
+                <h1 class="display-4">Pide cita a {{doctor.nombre}} </h1>
+                <h3>Solicita cita y espera a la confirmación del doctor</h3>
+                <form [formGroup]="solicitarCita" (ngSubmit)="createAppointment()" class="p-3">
+                    <div class="input-group mb-5">
+                        <span class="input-group-text input-group-icon">
+                            <i class="fa-solid fa-calendar" style="color: #5271FF"></i>
+                        </span>
+                        <input type="date" formControlName="fecha" class="form-control" id="fecha-nacimiento" required>
+                    </div>
+                    <div class="input-group mb-5">
+                        <span class="input-group-text input-group-icon">
+                            <i class="fa-solid fa-clock" style="color: #5271FF"></i>
+                        </span>
+                        <select formControlName="hora" class="form-control" required>
+                            <option *ngFor="let hora of horas" [value]="hora">{{hora}}</option>
+                        </select>
+                    </div>
+                    <button type="submit" role="link" class="btn btn-primary">Pedir cita</button>
+                </form>
+                <hr>
+                <h3>Días no disponibles en el calendario de {{doctor.nombre}}</h3>
+                <table class="text-center table mt-4">
+                    <tr *ngFor="let noDis of fechasOrdenadas">
+                        <td>{{noDis}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer-paciente class="fixed-bottom"></app-footer-paciente>

@@ -1,0 +1,96 @@
+<app-header-paciente class="fixed-top"></app-header-paciente>
+<div *ngIf="!isAuthenticated">
+    <div class="cuerpo d-flex justify-content-center align-items-center vh-100">
+        <app-not-found></app-not-found>
+    </div>
+</div>
+<div *ngIf="isAuthenticated">
+    <div class="cuerpo">
+        <div *ngIf="sexo === 'masculino' || sexo === 'transgeneroM'" class="text-center mt-10 mb-5">
+            <h1 class="fw-bold display-1"> {{patient.nombre}} {{patient.apellidos}}</h1>
+            <h3 class="display-6">Bienvenido de nuevo</h3>
+        </div>
+        <div *ngIf="sexo === 'femenino' || sexo === 'transgeneroF'" class="text-center mt-10 mb-5">
+            <h1 class="fw-bold display-1"> {{patient.nombre}} {{patient.apellidos}}</h1>
+            <h3 class="display-6">Bienvenida de nuevo</h3>
+        </div>
+        <div *ngIf="sexo === 'no_binario' || sexo === 'otro'" class="text-center mt-10 mb-5">
+            <h1 class="fw-bold display-1"> {{patient.nombre}} {{patient.apellidos}}</h1>
+            <h3 class="display-6">Bienvenide de nuevo</h3>
+        </div>
+        <div *ngIf="doctorsPending.length === 0 && !relation">
+            <div class="text-center mt-5">
+                <h1 class="display-5 mb-3">Parece que no has solicitado a ningún profesional ayuda</h1>
+                <h5 class="mt-2 mb-3">¿Empezamos a buscar?</h5>
+                <button class="btn btn-primary mt-3 col-1"><a href="/Busqueda" class="text-light" style="text-decoration: none;">Buscar psicólogo</a></button>
+            </div>
+        </div>
+        <div class="mt-5" *ngIf="doctorsPending.length !== 0 && !relation">
+            <div class="row" *ngFor="let doctor of doctorsPending">
+                <div class="col-2"></div>
+                <div class="col-8 p-4" style="border: outset 10px #2BC0E4;">
+                    <h1 class="display-5 fw-bold">Dr./Dra. {{doctor.nombre}} {{doctor.apellidos}} </h1>
+                    <hr>
+                    <h5>Estado de la petición:</h5>
+                    <div *ngIf="estado === 'Pendiente'">
+                        <h4><b>Pendiente</b></h4>
+                        <p>El médico no ha visto su petición todavía, manténgase a la espera. Puede buscar otro profesional mientras pero no solicitarlo. Para poder solicitar de nuevo debe
+                             cancelar esta petición presionando en el botón.
+                        </p>
+                        <div class="col-2 offset-10">
+                            <button (click)="cancelarPending()" class="btn btn-danger w-100">Cancelar solicitud</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5" *ngIf="doctorsPending.length !== 0 && relation">
+            <div class="row" *ngFor="let doctor of doctorsPending">
+                <div class="col-2"></div>
+                <div class="col-8 p-4" style="border: outset 10px #2BC0E4;">
+                    <h1 class="display-5 fw-bold">Dr./Dra. {{doctor.nombre}} {{doctor.apellidos}} </h1>
+                    <hr>
+                    <h5>Estado de la petición:</h5>
+                    <div *ngIf="estado === 'Aceptado'">
+                        <h4><b>Aceptada</b></h4>
+                        <p>Se ha aceptado la solicitud y {{doctor.nombre}} es ahora tu doctor asignado. ¡Pide cita ahora y empieza la terapia!</p>
+                        <div class="col-2 offset-10">
+                            <a class="btn btn-primary w-100" routerLink="/Home">Pide tu cita con {{doctor.nombre}}</a>
+                        </div>
+                    </div>
+                    <div *ngIf="estado === 'Rechazado'">
+                        <h4><b>Rechazada</b></h4>
+                        <p>Parece que no ha habido suerte, ¿probamos otra vez?</p>
+                        <div class="col-2 offset-10">
+                            <a href="/Busqueda" class="btn btn-primary w-100" style="text-decoration: none;">Buscar otro psicólogo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" *ngIf="doctorsPending.length === 0 && relation">
+            <div *ngIf="citas.length === 0">
+                <h1 class="display-5 mb-3">No tienes citas con tu doctor</h1>
+                <img width="10%" src="../../../assets/img/Calendario.png">
+                <h5 class="mt-2">Recuerda pedir citas para seguir con la terapia</h5>
+                <a class="btn btn-primary" href="/Citas">Pedir cita</a>
+            </div>
+            <table *ngIf="citas.length !== 0" class="mt-2 p-3 col-12">
+                <h3 class="display-4">Tus citas</h3>
+                <hr class="col-4 offset-4">
+                <tr *ngFor="let cita of citas">
+                    <td class="row mb-3">
+                        <h6 class="text-center offset-3 col-6">{{formatSpanishDate(cita.fecha)}} a las {{cita.hora}}
+                            <h6 *ngIf="cita.estado === 'Rechazada'" class="text-danger"> (RECHAZADA) </h6>
+                            <h6 *ngIf="cita.estado === 'Pendiente'" class="text-secondary"> (PENDIENTE) </h6>
+                            <h6 *ngIf="cita.estado === 'Aceptada'" class="text-success"> (ACEPTADA) </h6>
+                            <h6 *ngIf="cita.estado === 'Cancelada'" class="text-danger"> (CANCELADA) </h6>
+                        </h6>
+                    </td>
+                </tr>
+                <a class="btn btn-primary" href="/Citas">Gestionar citas</a>
+            </table>
+        </div>
+    </div>
+</div>
+<app-footer-paciente class="fixed-bottom"></app-footer-paciente>

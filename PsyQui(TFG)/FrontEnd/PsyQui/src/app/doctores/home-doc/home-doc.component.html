@@ -1,0 +1,46 @@
+<app-header-doctor class="fixed-top"></app-header-doctor>
+<div *ngIf="!isAuthenticated">
+    <div class="cuerpo1 d-flex justify-content-center align-items-center vh-100">
+        <app-not-found></app-not-found>
+    </div>
+</div>
+<div *ngIf="isAuthenticated">
+    <div class="cuerpo">
+        <div *ngIf="sexo === 'masculino' || sexo === 'transgeneroM'" class="text-center mt-10 mb-5">
+            <h1 class="fw-bold display-1">Dr. {{doctor.nombre}} {{doctor.apellidos}}</h1>
+            <h3 class="display-6">Bienvenido de nuevo</h3>
+        </div>
+        <div *ngIf="sexo === 'femenino' || sexo === 'transgeneroF'" class="text-center mt-10 mb-5">
+            <h1 class="fw-bold display-1">Dra. {{doctor.nombre}} {{doctor.apellidos}}</h1>
+            <h3 class="display-6">Bienvenida de nuevo</h3>
+        </div>
+        <div *ngIf="sexo === 'no_binario' || sexo === 'otro'" class="text-center mt-10 mb-5">
+            <h1 class="fw-bold display-1">Dre. {{doctor.nombre}} {{doctor.apellidos}}</h1>
+            <h3 class="display-6">Bienvenide de nuevo</h3>
+        </div>
+        <div class="text-center" *ngIf="patientsPending.length !== 0">
+            <h1 class="display-5 fw-bold">Solicitudes de seguimiento</h1>
+            <div class="row" *ngFor="let paciente of patientsPending">
+                <div class="col-4"></div>
+                <div class="card m-2 col-4">
+                    <div class="card-body">
+                      <h5 class="card-title">{{paciente.nombre}} {{paciente.apellidos}}</h5>
+                      <p class="card-subtitle">{{paciente.fecha_nac}} | {{paciente.genero}} | {{paciente.detalles}}</p>
+                      <p class="card-text">{{paciente.comentario}}</p>
+                      <div class="row">
+                        <a class="btn btn-success col-2" (click)="modPending(paciente.idPatient,'Aceptado')">Aceptar</a>
+                        <a class="btn btn-danger col-2 offset-8" (click)="modPending(paciente.idPatient,'Rechazado')">Rechazar</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="text-center" *ngIf="patientsPending.length === 0">
+            <h1 class="display-5 mb-3">No tienes solicitudes de seguimiento</h1>
+            <img width="10%" src="../../../assets/img/notificacionPending.png">
+            <h5 class="mt-2">Cuando alguien solicite tus servicios se te notificará aquí, mientras tanto puedes ver a tus pacientes actuales</h5>
+            <a class="btn btn-primary btn-purple" href="/Pacientes" >Ver mis pacientes</a>
+        </div>
+    </div>  
+</div>
+<app-footer-doctor class="fixed-bottom"></app-footer-doctor>
